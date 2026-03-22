@@ -18,10 +18,17 @@ const About = () => {
                 </div>
                 <div className="about-stats fade-in-up" style={{ animationDelay: '0.2s' }}>
                     <div className="stat-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ height: '50px', width: '50px', marginBottom: '10px', color: 'var(--primary)', display: 'inline-block' }}>
+                            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                        </svg>
                         <h3>3+</h3>
                         <p>Projects Built</p>
                     </div>
                     <div className="stat-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ height: '50px', width: '50px', marginBottom: '10px', color: 'var(--primary)', display: 'inline-block' }}>
+                            <circle cx="12" cy="8" r="7"></circle>
+                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                        </svg>
                         <h3>3</h3>
                         <p>Certifications</p>
                     </div>
@@ -31,6 +38,7 @@ const About = () => {
                         <p>CGPA</p>
                     </div>
                     <div className="stat-card">
+                        <img src="/Deloitte.png" alt="Deloitte Logo" style={{ height: '60px', borderRadius: '50%', marginBottom: '10px', display: 'inline-block', objectFit: 'contain', backgroundColor: 'white' }} />
                         <h3>Forage</h3>
                         <p>Deloitte Sim</p>
                     </div>
