@@ -5,7 +5,9 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Education from './components/Education';
 import Certifications from './components/Certifications';
+import Achievements from './components/Achievements';
 import Contact from './components/Contact';
+import Particles from './components/Particles';
 import { useEffect } from 'react';
 import './index.css';
 
@@ -29,8 +31,19 @@ function App() {
 
   return (
     <>
-      <div className="blob-bg"></div>
-      <div className="blob-bg blob-bg-2"></div>
+      <div style={{ width: '100vw', height: '100vh', position: 'fixed', top: 0, left: 0, zIndex: -1 }}>
+        <Particles
+          particleColors={["#ffffff", "#00add8"]}
+          particleCount={200}
+          particleSpread={10}
+          speed={0.1}
+          particleBaseSize={100}
+          moveParticlesOnHover
+          alphaParticles={false}
+          disableRotation={false}
+          pixelRatio={1}
+        />
+      </div>
       
       <Navbar />
       
@@ -41,6 +54,7 @@ function App() {
         <Projects />
         <Education />
         <Certifications />
+        <Achievements />
         <Contact />
       </main>
 

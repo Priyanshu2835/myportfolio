@@ -57,6 +57,7 @@ const Navbar = () => {
                     <li><a href="#projects" className={activeSection === 'projects' ? 'active' : ''} onClick={closeMobileMenu}>Projects</a></li>
                     <li><a href="#education" className={activeSection === 'education' ? 'active' : ''} onClick={closeMobileMenu}>Education</a></li>
                     <li><a href="#certifications" className={activeSection === 'certifications' ? 'active' : ''} onClick={closeMobileMenu}>Certifications</a></li>
+                    <li><a href="#achievements" className={activeSection === 'achievements' ? 'active' : ''} onClick={closeMobileMenu}>Achievements</a></li>
                     <li><a href="#contact" className={activeSection === 'contact' ? 'active' : ''} onClick={closeMobileMenu}>Contact</a></li>
                 </ul>
                 <div className="hamburger" onClick={toggleMobileMenu}>

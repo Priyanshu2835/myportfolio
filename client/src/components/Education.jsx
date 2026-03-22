@@ -7,25 +7,32 @@ const Education = () => {
                 <div className="timeline">
                     <div className="timeline-item">
                         <div className="timeline-dot"></div>
-                        <span className="date">Present</span>
-                        <h4>B.Tech in Computer Science and Engineering</h4>
-                        <p>Lovely Professional University</p>
+                        <div className="timeline-card">
+                            <span className="date">Present</span>
+                            <h4>B.Tech in Computer Science and Engineering</h4>
+                            <p>Lovely Professional University</p>
+                            <p className="score">CGPA: 7.39</p>
+                        </div>
                     </div>
 
                     <div className="timeline-item">
                         <div className="timeline-dot"></div>
-                        <span className="date">Intermediate</span>
-                        <h4>Class XII</h4>
-                        <p>Vanijya Inter College</p>
-                        <p className="score">Percentage: 77%</p>
+                        <div className="timeline-card">
+                            <span className="date">Intermediate</span>
+                            <h4>Class XII</h4>
+                            <p>Vanijya Inter College</p>
+                            <p className="score">Percentage: 77%</p>
+                        </div>
                     </div>
 
                     <div className="timeline-item">
                         <div className="timeline-dot"></div>
-                        <span className="date">Matriculation</span>
-                        <h4>Class X</h4>
-                        <p>DAV Public School</p>
-                        <p className="score">Percentage: 88.6%</p>
+                        <div className="timeline-card">
+                            <span className="date">Matriculation</span>
+                            <h4>Class X</h4>
+                            <p>DAV Public School</p>
+                            <p className="score">Percentage: 88.6%</p>
+                        </div>
                     </div>
                 </div>
             </div>

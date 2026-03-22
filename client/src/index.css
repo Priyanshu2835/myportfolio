@@ -13,8 +13,8 @@
 
   /* Deep Dark Surfaces */
   --surface: #050508;
-  --surface-container-low: #0a0a0f;
-  --surface-container-lowest: #12121a;
+  --surface-container-low: rgba(10, 10, 15, 0.4);
+  --surface-container-lowest: rgba(18, 18, 26, 0.5);
   --surface-variant: rgba(18, 18, 26, 0.8);
 
   /* Bright Text */
@@ -53,43 +53,7 @@ body {
   position: relative;
 }
 
-/* Background Animated Blobs */
-.blob-bg {
-  position: fixed;
-  top: -20vh;
-  left: -20vw;
-  width: 60vw;
-  height: 60vw;
-  background: radial-gradient(circle, rgba(0, 173, 216, 0.15) 0%, transparent 70%);
-  border-radius: 50%;
-  z-index: -1;
-  filter: blur(80px);
-  animation: floatBlobs 20s ease-in-out infinite alternate;
-}
-
-.blob-bg-2 {
-  top: auto;
-  bottom: -30vh;
-  left: auto;
-  right: -20vw;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
-  animation-delay: -10s;
-  animation-direction: alternate-reverse;
-}
-
-@keyframes floatBlobs {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
-
-  50% {
-    transform: translate(5vw, 10vh) scale(1.1);
-  }
-
-  100% {
-    transform: translate(-5vw, -5vh) scale(0.9);
-  }
-}
+/* Background Animated Blobs Removed */
 
 /* Typography */
 h1,
@@ -109,6 +73,7 @@ h6 {
   letter-spacing: -1px;
   background: linear-gradient(to right, #fff, #94a3b8);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -637,6 +602,27 @@ h6 {
   border-color: #f59e0b;
   box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
 }
+
+.timeline-card {
+  background: var(--surface-container-lowest);
+  border: 1px solid var(--outline-variant);
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: -15px; /* Offset the padding visually relative to dot */
+  margin-left: 10px;
+  position: relative;
+  transition: var(--transition);
+  z-index: 1;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-item:hover .timeline-card {
+  border-color: rgba(0, 173, 216, 0.4);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-5px);
+  background: linear-gradient(145deg, var(--surface-container-lowest), rgba(0, 173, 216, 0.05));
+}
+
 
 .date {
   display: inline-block;

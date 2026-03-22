@@ -8,17 +8,34 @@ const Contact = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        
+
         // Formspree Integration Instructions:
-        // 1. Create a free account at formspree.io and create a new form.
-        // 2. Change your <form> tag below to: <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        // 3. Remove this `onSubmit={handleSubmit}` attribute from the form if using standard Formspree action.
-        
-        setStatus('Message simulated! Connect to Formspree for real emails.');
-        setFormData({ name: '', email: '', message: '' });
-        
+        // 1. Go to formspree.io, create an account, and create a new form.
+        // 2. Replace "YOUR_FORMSPREE_ID" below with the actual string from your form endpoint
+        const formspreeId = "xpqygqzo"; // e.g., "xjkloweq"
+
+        try {
+            const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
+                setStatus('Message sent successfully!');
+                setFormData({ name: '', email: '', message: '' });
+            } else {
+                setStatus('Oops! There was a problem submitting your form.');
+            }
+        } catch (error) {
+            setStatus('Oops! There was a problem submitting your form.');
+        }
+
         setTimeout(() => setStatus(''), 5000);
     };
 
@@ -39,32 +56,32 @@ const Contact = () => {
                 </div>
 
                 <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px', maxWidth: '500px', margin: '30px auto 0' }}>
-                    <input 
-                        type="text" 
-                        name="name" 
-                        placeholder="Your Name" 
-                        required 
-                        value={formData.name} 
-                        onChange={handleChange} 
-                        style={inputStyle} 
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Your Name"
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                        style={inputStyle}
                     />
-                    <input 
-                        type="email" 
-                        name="email" 
-                        placeholder="Your Email" 
-                        required 
-                        value={formData.email} 
-                        onChange={handleChange} 
-                        style={inputStyle} 
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Your Email"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                        style={inputStyle}
                     />
-                    <textarea 
-                        name="message" 
-                        placeholder="Your Message" 
-                        required 
-                        rows="4" 
-                        value={formData.message} 
-                        onChange={handleChange} 
-                        style={{...inputStyle, resize: 'vertical'}}
+                    <textarea
+                        name="message"
+                        placeholder="Your Message"
+                        required
+                        rows="4"
+                        value={formData.message}
+                        onChange={handleChange}
+                        style={{ ...inputStyle, resize: 'vertical' }}
                     ></textarea>
                     <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>Send Message</button>
                     {status && <p style={{ color: 'var(--accent)', marginTop: '10px' }}>{status}</p>}
